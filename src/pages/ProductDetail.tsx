@@ -168,7 +168,7 @@ const ProductDetail = () => {
                   <input 
                     type="number" 
                     value={quantity} 
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                    onChange={(e) => setQuantity(Math.max(1, Math.min(10000, parseInt(e.target.value) || 1)))}
                     className="quantity-input"
                     min="1"
                   />
