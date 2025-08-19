@@ -35,6 +35,7 @@ const ProductList = () => {
         break
       case 'price':
         // Price sorting to implement
+        filtered.sort((a, b) => b.basePrice -  a.basePrice)
         break
       case 'stock':
         filtered.sort((a, b) => b.stock - a.stock)
