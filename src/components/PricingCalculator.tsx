@@ -43,7 +43,7 @@ const PricingCalculator = ({ product }: PricingCalculatorProps) => {
 
   // Format price display
   const formatPrice = (price: number) => {
-    return `$${price.toLocaleString()}` // Should be CLP formatting
+      return price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 }) // Should be CLP formatting
   }
 
   const currentPrice = calculatePrice(quantity)
