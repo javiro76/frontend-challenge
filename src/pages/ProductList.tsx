@@ -23,8 +23,8 @@ const ProductList = () => {
     // Search filter
     if (search) {
       filtered = filtered.filter(product => 
-        product.name.includes(search) ||
-        product.sku.includes(search)
+        product.name.toLocaleLowerCase().includes(search.toLowerCase()) ||
+        product.sku.toLocaleLowerCase().includes(search.toLocaleLowerCase())
       )
     }
 
