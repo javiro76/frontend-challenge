@@ -17,7 +17,8 @@ const PricingCalculator = ({ product }: PricingCalculatorProps) => {
     }
 
     // Find applicable price break
-    let applicableBreak = product.priceBreaks[0]
+    const sortedBreaks = [...product.priceBreaks].sort((a, b) => a.minQty - b.minQty)
+    let applicableBreak = sortedBreaks[0]
     for (let i = 0; i < product.priceBreaks.length; i++) {
       if (qty >= product.priceBreaks[i].minQty) {
         applicableBreak = product.priceBreaks[i]
